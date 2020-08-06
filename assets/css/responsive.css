@@ -307,13 +307,16 @@
 }
 
 @media only screen and (max-width: 575px) {
+    .header {
+        padding: 10px 0;
+    }
     .active .header__menu {
         left: 0;
         width: 100%;
     }
     .active .header__btn-menu {
         z-index: 999;
-        top: -10px;
+        /* top: -10px; */
     }
     .menu-heading {
         padding: 15px;
