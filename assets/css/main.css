@@ -1,0 +1,927 @@
+/* -------------------------------------------------------------------------- */
+/*                                1. Reset CSS                                */
+/* -------------------------------------------------------------------------- */
+@import url("./normalize.css");
+
+/* -------------------------------------------------------------------------- */
+/*                               2. Fonts Global                              */
+/* -------------------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+/* -------------------------------------------------------------------------- */
+/*                                3. Variables                                */
+/* -------------------------------------------------------------------------- */
+:root {
+    --primary-color: #7202bb;
+    --gradient-color-opacity: linear-gradient(
+        to left,
+        rgba(50, 100, 245, 0.9),
+        rgba(74, 84, 232, 0.88),
+        rgba(91, 66, 219, 0.85),
+        rgba(104, 44, 203, 0.88),
+        rgba(114, 2, 187, 0.9)
+    );
+    --gradient-color: linear-gradient(
+        to left,
+        rgba(50, 100, 245, 1),
+        rgba(74, 84, 232, 1),
+        rgba(91, 66, 219, 1),
+        rgba(104, 44, 203, 1),
+        rgba(114, 2, 187, 1)
+    );
+    --dark-color: #555;
+    --light-color: #fff;
+    --text-color: #565656;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                4. Common CSS                               */
+/* -------------------------------------------------------------------------- */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+button,
+a:focus,
+a:hover,
+a {
+    outline: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 400;
+    color: var(--dark-color);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.btn {
+    padding: 10px 30px;
+    outline: 0;
+    border: none;
+}
+
+.p-100 {
+    padding: 100px 0;
+}
+
+.section-title {
+    position: relative;
+    text-align: center;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    padding-bottom: 10px;
+    color: var(--dark-color);
+    text-transform: capitalize;
+}
+
+.section-title .section-line {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 140px;
+    height: 5px;
+    background-color: rgba(114, 2, 187, 0.48);
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.section-title .section-line::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    border-radius: 8px;
+    background-color: #7202bb;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+#go-to-top {
+    position: fixed;
+    right: 2%;
+    bottom: 8%;
+    background: rgb(121, 120, 120);
+    padding: 18px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#go-to-top:hover {
+    background-color: #565656;
+}
+
+#go-to-top > i {
+    color: var(--light-color);
+    font-size: 18px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                5. Header CSS                               */
+/* -------------------------------------------------------------------------- */
+.header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    background: transparent;
+    padding: 30px 0;
+    z-index: 99;
+    transition: all 0.3s ease;
+}
+
+.header.header__bg {
+    background: var(--gradient-color);
+    padding: 15px 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu .menu__item {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.menu .menu__link {
+    position: relative;
+    display: block;
+    padding: 6px 0;
+    font-size: 14px;
+}
+
+.menu .menu__link:hover {
+    text-decoration: none;
+}
+
+.menu .menu__link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    height: 2px;
+    background-color: var(--light-color);
+    transition: all 0.3s ease-in;
+}
+
+.menu .menu__item:hover .menu__link::before {
+    left: 0;
+    right: 0;
+}
+
+.menu-heading {
+    display: none;
+}
+
+.header__btn .header__account,
+.menu .menu__link {
+    color: var(--light-color);
+}
+
+.header__btn .header__account,
+.banner__btn,
+.intro__btn-more {
+    position: relative;
+    background-color: rgb(255, 98, 98);
+    padding: 10px 30px;
+    border-radius: 24px;
+    border: 0;
+    font-size: 14px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.header__btn .header__account {
+    padding: 8px 20px;
+}
+
+.header__btn .header__account::before,
+.banner__btn::before,
+.intro__btn-more::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    background-color: rgb(250, 81, 81);
+    transition: all 0.2s ease-in-out;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.header__btn .header__account:hover::before,
+.banner__btn:hover::before,
+.intro__btn-more:hover::before {
+    left: 0;
+    right: 0;
+}
+
+.header__btn-menu {
+    display: none;
+    position: relative;
+    width: 45px;
+    height: 40px;
+    margin-top: 10px;
+    transition: all 0.3s;
+}
+
+.header__btn-menu span {
+    position: absolute;
+    right: 0;
+    background-color: var(--light-color);
+    padding: 2px;
+    width: 40px;
+    border-radius: 4px;
+}
+
+.header__btn-menu span:nth-child(1) {
+    top: 0px;
+}
+
+.header__btn-menu span:nth-child(2) {
+    top: 12px;
+    width: 24px;
+}
+
+.header__btn-menu span:nth-child(3) {
+    bottom: 12px;
+    width: 40px;
+}
+
+.active .header__btn-menu span:nth-child(1) {
+    top: -4px;
+    left: 24px;
+    width: 4px;
+    height: 36px;
+}
+
+.active .header__btn-menu span:nth-child(2) {
+    width: 36px;
+    left: 8px;
+}
+
+.active .header__btn-menu span:nth-child(3) {
+    width: 0px;
+    padding: 0;
+}
+
+.active .header__btn-menu {
+    transform: rotateZ(45deg);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  6. Banner                                 */
+/* -------------------------------------------------------------------------- */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 760px;
+    background: url("../img/background-banner.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 140px 0;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-color-opacity);
+}
+
+.banner__shape {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+}
+
+.banner__title,
+.banner__desc > h4,
+.banner__desc > p,
+.banner__btn {
+    color: var(--light-color);
+}
+
+.banner__title {
+    position: relative;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+}
+
+.banner__title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 160px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: var(--light-color);
+}
+
+.banner__desc {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.banner__desc h4,
+.banner__desc p {
+    font-size: 20px;
+}
+
+.banner__desc h4 {
+    padding-bottom: 12px;
+}
+.banner__desc > p {
+    font-weight: 300;
+}
+
+.banner__btn {
+    position: relative;
+    padding: 10px 26px;
+}
+
+.banner__btn:hover {
+    color: #fff;
+}
+
+.banner__btn > span {
+    margin-left: -7px;
+}
+
+.banner__btn > i {
+    position: absolute;
+    top: 50%;
+    right: -68%;
+    transform: translateY(-50%);
+    animation: loop-move 1.2s infinite;
+}
+
+@keyframes loop-move {
+    from {
+        left: 10px;
+    }
+    to {
+        left: 15px;
+    }
+}
+
+.banner__img {
+    max-width: 400px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  7. Intro                                  */
+/* -------------------------------------------------------------------------- */
+.intro .intro__title {
+    margin-bottom: 60px;
+}
+
+.intro .intro__image {
+    max-width: 400px;
+}
+
+.intro__content .intro__desc > p {
+    padding-bottom: 12px;
+    line-height: 1.6;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.intro__content .intro__btn-more {
+    color: var(--light-color);
+    margin-top: 14px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  8. Why us                                 */
+/* -------------------------------------------------------------------------- */
+.why-us {
+    position: relative;
+    background-image: linear-gradient(
+        to left,
+        rgba(50, 100, 245, 1),
+        rgba(74, 84, 232, 1),
+        rgba(91, 66, 219, 1),
+        rgba(104, 44, 203, 1),
+        rgba(114, 2, 187, 1)
+    );
+}
+
+.why-us .why-us__title,
+.why-us .why-us__content {
+    position: relative;
+    z-index: 9;
+}
+
+.why-us .why-us__title > h2 {
+    color: var(--light-color);
+}
+
+.why-us__title.section-title .section-line,
+.testimobial__title.section-title .section-line {
+    background-color: rgb(255 255 255 / 65%);
+}
+
+.why-us__title.section-title .section-line::before,
+.testimobial__title.section-title .section-line::before {
+    background-color: var(--light-color);
+}
+
+.why-us .why-us__bg-color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(
+        to left,
+        rgba(50, 100, 245, 1),
+        rgba(74, 84, 232, 1),
+        rgba(91, 66, 219, 1),
+        rgba(104, 44, 203, 1),
+        rgba(114, 2, 187, 1)
+    );
+
+    width: 60%;
+    height: 100%;
+    z-index: 9;
+    transform: skewX(-14deg);
+    -webkit-transform: skewX(-14deg);
+    -moz-transform: skewX(-14deg);
+    -ms-transform: skewX(-14deg);
+    -o-transform: skewX(-14deg);
+}
+
+.why-us .why-us__bg-image {
+    background: url("../img/arlington-research-WMdtbsQ5ouA-unsplash.jpg")
+        no-repeat;
+    background-size: cover;
+    width: 65%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-position: center;
+}
+
+.why-us__content {
+    margin-top: 50px;
+}
+
+.why-us__item {
+    align-items: center;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.why-us__item:hover .item__number {
+    color: var(--light-color);
+}
+
+.why-us__item > .item__content > h4,
+.why-us__item > .item__content > p {
+    color: var(--light-color);
+}
+
+.why-us__item > h3.item__number {
+    font-size: 80px;
+    font-style: italic;
+    font-weight: 700;
+    color: rgb(194, 194, 194);
+}
+
+.why-us__item > .item__content > h4 {
+    font-size: 22px;
+}
+
+.why-us__item > .item__content > p {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 8px 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 9. Bootcamp                                */
+/* -------------------------------------------------------------------------- */
+.bootcamp .bootcamp__image {
+    max-width: 460px;
+}
+
+.bootcamp__content > p {
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.bootcamp__content > h4 {
+    font-weight: 500;
+}
+
+.bootcamp__content ul li {
+    padding: 10px 0;
+}
+
+.bootcamp__content ul li span {
+    position: relative;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.bootcamp__content ul li span::before {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    padding-right: 10px;
+    display: inline-block;
+    color: rgb(61, 212, 111);
+}
+
+.bootcamp .bootcamp__more {
+    margin-top: 30px;
+
+    text-align: center;
+    color: #f75858;
+    font-size: 16px;
+    border: 1px solid #f75858;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.bootcamp .bootcamp__more:hover {
+    background-color: #f75858;
+    color: var(--light-color);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 10. Couter                                 */
+/* -------------------------------------------------------------------------- */
+.counter {
+    position: relative;
+    background: url("../img/counter-background.jpg") no-repeat center center /
+        cover;
+    background-attachment: fixed;
+    width: 100%;
+    display: block;
+    padding: 100px 0;
+    z-index: 0;
+}
+
+.counter::after {
+    position: absolute;
+    content: "";
+    background-image: linear-gradient(
+        to right,
+        rgba(32, 40, 119, 0.95),
+        rgba(55, 46, 149, 0.95),
+        rgba(83, 49, 177, 0.9),
+        rgba(114, 48, 205, 0.85),
+        rgba(150, 41, 230, 0.95)
+    );
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.counter__item {
+    z-index: 99;
+    text-align: center;
+}
+
+.counter__item .counter__icon > i,
+.counter__item .counter__content > p {
+    color: var(--light-color);
+}
+
+.counter__item .counter__icon > i {
+    font-size: 60px;
+}
+
+.counter__item .counter__content > p {
+    padding-top: 15px;
+    font-size: 28px;
+    margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 11. Courses                                */
+/* -------------------------------------------------------------------------- */
+.courses .slick-slide {
+    margin-bottom: 15px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.course__item {
+    border: 1px solid #e8ebf1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.course__item .course__thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.course__item .course__thumb a > img {
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.course__item:hover .course__thumb a > img {
+    transform: scale(1.1);
+}
+
+.course__item .course__category {
+    position: absolute;
+    top: 8%;
+    left: 0;
+    display: inline-block;
+    padding: 6px 16px;
+    background: #8a65fb;
+    color: var(--light-color);
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.course__item .course__title {
+    padding: 14px 20px;
+    min-height: 90px;
+}
+
+.course__item .course__title h4 {
+    line-height: 1;
+}
+
+.course__item .course__title h4 > a {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.course__item:hover .course__title h4 > a {
+    color: #f75858;
+    text-decoration: none;
+}
+.course__item .course__info {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 24px;
+    color: #4a5874;
+}
+
+.course__footer {
+    padding: 15px 10px;
+    border-top: 1px solid #e8ebf1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course__footer .course__author {
+    display: flex;
+    align-items: center;
+}
+
+.course__author .author__img {
+    max-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    margin-right: 7px;
+}
+
+.course__author > h6 {
+    margin-bottom: 0;
+}
+
+.course__author > h6 > a {
+    text-decoration: none;
+    color: #4a5874;
+    font-size: 14px;
+}
+
+.course__price span {
+    color: #ff6262;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.slick-dots li button:before {
+    font-size: 14px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              12. Testimonials                              */
+/* -------------------------------------------------------------------------- */
+.testimobials {
+    position: relative;
+    background: url("../img/austin-distel-wD1LRb9OeEo-unsplash.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.testimobials::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: var(--gradient-color-opacity);
+}
+
+.testimobial__title > h2,
+.testimobial__author > p {
+    color: var(--light-color);
+}
+
+.testimobial__item > img {
+    display: block;
+    max-width: 159px;
+    padding: 5px;
+    border: 2px solid var(--light-color);
+    margin: 0 auto 15px;
+}
+
+.testimobial__item > blockquote {
+    position: relative;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--light-color);
+    padding: 0px 170px;
+}
+
+.testimobial__item > blockquote::before,
+.testimobial__item > blockquote::after {
+    position: absolute;
+    font-size: 80px;
+    font-style: normal;
+    line-height: 1;
+    width: 30px;
+    height: 30px;
+}
+
+.testimobial__item > blockquote::before {
+    content: "\201C";
+    top: 0;
+    left: 100px;
+}
+
+.testimobial__item > blockquote::after {
+    content: "\201D";
+    bottom: 0;
+    right: 100px;
+}
+
+.testimobial__author > p > strong {
+    font-size: 20px;
+}
+
+.testimobial__author > p > span {
+    font-size: 16px;
+}
+
+.testimobials .slick-dots li button:before {
+    color: #fff !important;
+}
+/* -------------------------------------------------------------------------- */
+/*                                  13. Blog                                  */
+/* -------------------------------------------------------------------------- */
+.blog__item {
+    margin-bottom: 20px;
+}
+.blog__item .blog__thumb > img {
+    width: 100%;
+    height: 159px;
+    object-fit: cover;
+}
+
+.blog__meta {
+    padding: 7px 0;
+}
+
+.blog__meta > span,
+.blog__meta > span > a {
+    color: var(--text-color);
+}
+
+.blog__title {
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.blog__title > a {
+    color: var(--dark-color);
+    font-size: 20px;
+}
+
+.blog__title > a:hover {
+    text-decoration: none;
+    color: #f75858;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 14. Footer                                 */
+/* -------------------------------------------------------------------------- */
+.footer {
+    background: var(--gradient-color);
+    padding-top: 100px;
+    padding-bottom: 10px;
+}
+
+.footer__link > h4,
+.footer__link > ul > li > a {
+    color: var(--light-color);
+}
+
+.footer__link > ul > li {
+    padding: 8px 0;
+}
+
+.footer__link > ul > li > a {
+    font-size: 15px;
+}
+
+.footer__link > ul > li > a:hover {
+    text-decoration: none;
+}
+
+.footer__link > ul > li > i {
+    font-size: 16px;
+    color: var(--light-color);
+    width: 25px;
+}
+
+.footer .footer__link {
+    margin-bottom: 15px;
+}
+
+.footer span.copyright {
+    color: var(--light-color);
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+}

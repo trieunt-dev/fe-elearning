@@ -1,0 +1,343 @@
+@media only screen and (max-width: 1199px) {
+    .banner {
+        min-height: 600px;
+    }
+
+    .banner__desc > h4,
+    .banner__desc > p {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .w-0 {
+        width: 0;
+    }
+
+    .p-0 {
+        padding: 0;
+    }
+
+    .header__btn {
+        margin-right: 20px;
+    }
+
+    .header__btn-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .header__menu {
+        position: fixed;
+        left: -120%;
+        top: 0;
+        bottom: 0;
+        width: 320px;
+        background-color: #fff;
+        z-index: 999;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .active .header__menu {
+        left: 0;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .menu-heading {
+        display: inline-block;
+        background: linear-gradient(
+            to left,
+            rgba(50, 100, 245, 1),
+            rgba(74, 84, 232, 1),
+            rgba(91, 66, 219, 1),
+            rgba(104, 44, 203, 1),
+            rgba(114, 2, 187, 1)
+        );
+        width: 100%;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .menu .menu__item {
+        display: block;
+        margin: 0;
+        border-bottom: 1px solid #f7f5f5;
+    }
+
+    .menu .menu__link {
+        display: inline-block;
+        width: 100%;
+        color: #777;
+        padding: 14px 25px;
+    }
+
+    .mark-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        z-index: 0;
+        transition: all 0.3s ease-in;
+        pointer-events: none;
+        cursor: pointer;
+    }
+
+    .active .mark-bg {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.8);
+        pointer-events: auto;
+    }
+
+    .banner__title {
+        font-size: 22px;
+    }
+
+    .banner__desc > h4 {
+        font-size: 18px;
+    }
+
+    .banner__desc > p {
+        font-size: 18px;
+    }
+
+    .banner__img {
+        max-width: 330px;
+        margin-top: 20px;
+    }
+
+    .intro__content .intro__desc > p {
+        font-size: 16px;
+        padding-bottom: 0px;
+    }
+    .intro .intro__image {
+        max-width: 300px;
+    }
+
+    .intro__content .intro__btn-more {
+        margin-top: 5px;
+    }
+
+    .why-us .why-us__bg-color {
+        width: 65%;
+    }
+
+    .why-us .why-us__bg-color,
+    .why-us .why-us__bg-image {
+        display: none;
+    }
+
+    .why-us__content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .why-us__item {
+        width: 48%;
+        align-items: flex-start;
+    }
+
+    .why-us__item > h3.item__number {
+        line-height: 1;
+    }
+
+    .why-us__item > .item__content > h4 {
+        font-size: 20px;
+    }
+
+    .bootcamp__image {
+        margin: 0 auto;
+    }
+
+    .bootcamp__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bootcamp__content p {
+        padding: 0 30px;
+        text-align: justify;
+    }
+
+    .bootcamp__content > h4 {
+        text-align: center;
+    }
+
+    .bootcamp__content > ul {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .counter {
+        padding: 50px 0;
+    }
+
+    .counter__item .counter__icon > i {
+        font-size: 40px;
+    }
+
+    .counter__item .counter__content > p {
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+
+    .testimobial__item > blockquote {
+        padding: 0px 120px;
+    }
+
+    .testimobial__item > blockquote::before {
+        left: 80px;
+    }
+
+    .testimobial__item > blockquote::after {
+        right: 80px;
+    }
+    .footer__link > ul > li > a {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .banner__content {
+        text-align: center;
+    }
+
+    .banner__title {
+        font-size: 30px;
+    }
+
+    .banner__title::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .banner__desc > h4,
+    .banner__desc > p {
+        font-size: 20px;
+    }
+
+    .intro {
+        padding: 80px 0;
+    }
+
+    .intro__desc {
+        margin-top: 18px;
+    }
+
+    .intro__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .intro__content .intro__btn-more {
+        display: inline-flex;
+        width: auto;
+        align-self: center;
+    }
+
+    .why-us .why-us__bg-color,
+    .why-us .why-us__bg-image {
+        display: none;
+    }
+
+    .why-us.p-100 {
+        padding: 70px 0;
+        padding-bottom: 65px;
+    }
+
+    .why-us__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .why-us__item {
+        width: 100%;
+        align-items: center;
+    }
+
+    .why-us__item > h3.item__number {
+        line-height: unset;
+    }
+
+    .counter__item .counter__icon > i {
+        font-size: 36px;
+    }
+
+    .counter__item .counter__content > p {
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+
+    .testimobial__item > blockquote {
+        padding: 0px 40px;
+    }
+
+    .testimobial__item > blockquote::before {
+        left: 0;
+    }
+
+    .testimobial__item > blockquote::after {
+        right: 0;
+    }
+
+    .blog__item {
+        padding-bottom: 10px;
+    }
+
+    .blog__item .blog__thumb > img {
+        height: 100%;
+    }
+
+    .footer .footer__link,
+    .footer .footer__logo {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .footer span.copyright {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .active .header__menu {
+        left: 0;
+        width: 100%;
+    }
+    .active .header__btn-menu {
+        z-index: 999;
+        top: -10px;
+    }
+    .menu-heading {
+        padding: 15px;
+        text-align: left;
+    }
+
+    .header__btn .header__account {
+        display: none;
+    }
+
+    .banner__img {
+        padding-top: 20px;
+    }
+
+    .counter {
+        padding: 36px 0;
+    }
+
+    .counter__item .counter__icon > i {
+        font-size: 30px;
+    }
+
+    .counter__item .counter__content > p {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+}
