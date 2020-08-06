@@ -313,7 +313,7 @@
     }
     .active .header__btn-menu {
         z-index: 999;
-        top: -10px;
+        top: -20px;
     }
     .menu-heading {
         padding: 15px;
